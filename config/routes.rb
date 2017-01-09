@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   root to: 'users#index'
 
+  resources :users
   resources :records
-  resources :users do
-    resources :lists
+  resources :lists do
+    resources :items
   end
 
   resources :tags

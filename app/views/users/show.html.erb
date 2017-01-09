@@ -1,11 +1,13 @@
-<h1> Here are all your lists <h2>
-
-  <ul>
-  <% @lists.each do |list| %>
-    <li>
-      <%= link_to list.name, user_list_path(@user), class: 'list_title' %>
-    </li>
-    <% end %>
-  </ul>
-
-  <%= link_to "Create a New List", new_user_list_path(@user), class: 'new_list' %>
+<% if current_user %>
+  <h1> Here are all your lists <h2>
+    <ul>
+      <% @lists.each do |list| %>
+      <li>
+        <%= link_to list.name, list_path, class: 'list_title' %>
+      </li>
+      <% end %>
+    </ul>
+    <%= link_to "Create a New List", new_list_path, class: 'new_list' %>
+<% else %>
+  <%= link_to "Please Log in", login_path %>
+  <% end %>

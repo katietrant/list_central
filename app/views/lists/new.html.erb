@@ -1,7 +1,7 @@
 <div class="panel panel-default">
 <h1 class="panel-heading">Create a New List</h1>
 <div class="panel-body">
-<%= form_for new_user_list_path do |f| %>
+<%= form_for @list do |f| %>
   List Name: <%= f.text_field :name %>
   <%= f.submit "Submit" %>
 </div>

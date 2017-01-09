@@ -9,18 +9,21 @@ class ListsController < ApplicationController
 
   def create
     @user = current_user
-    @list = List.new(name: params[:name], user_id:current_user.id)
-    if list.save
-      flash.notice = "#{list.name} has been created"
-      redirect to user_list_path
+    @list = List.new(name: params[:list][:name], user_id:current_user.id)
+    if @list.save
+      flash.notice = "#{@list.name} has been created"
+      redirect_to user_path(@user)
     else
       flash.notice = "Your list was not saved"
-      redirect_to new_user_list_path
+      redirect_to new_list_path
     end
   end
 
   def show
     @list = List.find(params[:id])
+    p @lists
+    @items = Item.find_by(list_id: @list.id)
+    p @items
   end
 
 

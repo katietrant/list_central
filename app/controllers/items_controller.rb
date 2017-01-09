@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       format.html {redirect_to list_path(list)}
-      format.js { head :ok }
+      format.js { }
     end
   end
 

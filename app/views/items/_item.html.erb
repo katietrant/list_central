@@ -1,9 +1,0 @@
-<li id="<%= item.id %>">
-  <%@list.items.each do |item| %>
-       <li>
-         <%=item.product%>
-         <%=item.quantity%>
-         <%= link_to "Done", list_item_path(@list.id, item), :method => 'delete', remote: true %>
-       </li>
-     <%end%>
-</li>

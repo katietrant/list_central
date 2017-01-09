@@ -1,9 +1,5 @@
 <h1><%= @list.name %></h1>
 
-<%@list.items.each do |item| %>
-     <li>
-       <%=item.product%>
-       <%=item.quantity%>
-       <%= link_to "Done", item_path(item), method:'delete', remote: true %>
-     </li>
-   <%end%>
+<ul>
+    <%= render @items %>
+  </ul>

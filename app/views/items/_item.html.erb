@@ -1,0 +1,5 @@
+<li id="<%= item.id %>">
+  <%= item.product %><br />
+  <strong>priority: </strong><%= item.quantity %><br/>
+  <%= link_to "Purchased", list_item_path(item), method:'delete', remote: true %>
+</li>

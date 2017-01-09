@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+<h1 class="panel-heading">Create A New Account</h1>
+<div class="panel-body">
+<%= form_for @user do |f| %>
+  Username: <%= f.text_field :username %>
+  Email: <%= f.email_field :email %>
+  Password: <%= f.password_field :password %>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= f.submit "Submit" %>
+</div>
+<% end %>
+</div>

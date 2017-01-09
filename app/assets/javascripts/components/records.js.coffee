@@ -42,8 +42,8 @@
         'Records'
       React.DOM.div
         className: 'row'
-        React.createElement AmountBox, type: 'success', amount: @credits(), text: 'Credit'
-        React.createElement AmountBox, type: 'danger', amount: @debits(), text: 'Debit'
+        React.createElement AmountBox, type: 'success', amount: @credits(), text: 'Nest Egg'
+        React.createElement AmountBox, type: 'danger', amount: @debits(), text: 'Purchases'
         React.createElement AmountBox, type: 'info', amount: @balance(), text: 'Balance'
       React.createElement RecordForm, handleNewRecord: @addRecord
       React.DOM.hr null

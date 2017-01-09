@@ -4,13 +4,6 @@
     <ul>
       <%= render @lists %>
     </ul>
-    <!-- <ul>
-      <% @lists.each do |list| %>
-      <li id=list.id>
-        <%= link_to list.name, list_path(list), class: 'list_title' %>
-      </li>
-      <% end %>
-    </ul> -->
     <%= link_to "Create a New List", new_list_path, class: 'new_list' %>
 <% else %>
   <%= link_to "Please Log in", login_path %>

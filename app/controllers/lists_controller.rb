@@ -21,9 +21,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-    p @list
     @items = Item.find_by(list_id: @list.id)
-    p @items
   end
 
 

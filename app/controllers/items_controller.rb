@@ -14,8 +14,8 @@ class ItemsController < ApplicationController
     @item.destroy
 
     respond_to do |format|
-      format.html {redirect_to list_path}
-      format.js { }
+      format.html {redirect_to list_path(list)}
+      format.js { head :ok }
     end
   end
 

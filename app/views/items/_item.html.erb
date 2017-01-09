@@ -3,7 +3,7 @@
        <li>
          <%=item.product%>
          <%=item.quantity%>
-         <%= link_to "Done", list_item_path(item), method:'delete', remote: true %>
+         <%= link_to "Done", list_item_path(@list.id, item), :method => 'delete', remote: true %>
        </li>
      <%end%>
 </li>

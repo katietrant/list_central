@@ -24,6 +24,16 @@ class ListsController < ApplicationController
     @items = @list.items
   end
 
+  def destroy
+    @list= List.find(params[:id])
+    @list.destroy
+
+    respond_to do |format|
+      format.html {redirect_to user_path(user)}
+      format.js { }
+    end
+  end
+
 
   private
   def list_params

@@ -1,5 +1,8 @@
 <h1><%= @list.name %></h1>
 
-<ul>
+  <ul>
     <%= render partial: "item", collection: @items %>
   </ul>
+
+<%= link_to "Edit List", edit_list_path, remote: true %><br />
+<!-- <%= link_to "Delete List", list_path, method: 'delete', data: {confirm: "Delete List?"}, remote: true %> -->

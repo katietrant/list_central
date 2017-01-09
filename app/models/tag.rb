@@ -1,5 +1,5 @@
 class Tag < ApplicationRecord
-  has_many :taggings
+  has_many :taggings, optional: true
   has_many :lists, through: :taggings
 
 

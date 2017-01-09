@@ -1,0 +1,7 @@
+<h1><%= @list.name %></h1>
+
+  <%@list.items.each do |item| %>
+      <li><%=item.product%></li>
+      <li><%=item.quantity%></li>
+    <%end%>
+  

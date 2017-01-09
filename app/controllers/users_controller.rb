@@ -20,7 +20,8 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @lists = List.find_by(user_id: @user.id)
+    @lists = List.where(user_id: current_user.id)
+    p @lists
   end
 
   private

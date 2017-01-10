@@ -22,6 +22,10 @@ class ListsController < ApplicationController
   def show
     @list = List.find(params[:id])
     @items = @list.items
+    p "*" * 100
+    p @item = Item.new(:list => @list)
+
+    # @fucktoy = @list.items.new
   end
 
   def destroy
@@ -39,4 +43,5 @@ class ListsController < ApplicationController
   def list_params
     params.require(:list).permit(:name)
   end
+
 end

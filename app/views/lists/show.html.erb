@@ -7,8 +7,8 @@
 
 
 <%= link_to "Edit List", edit_list_path %><br />
-<%= link_to "Add New Item", new_list_item_path(@list)%>
+<!-- <%= link_to "Add New Item", new_list_item_path(@list), { :class=>"new-item-link" } %> -->
 
-<div="new-item-form">
+<div class="new-item-form">
   <%= render partial: "/items/form", :f => @items %>
 </div>

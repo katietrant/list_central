@@ -2,11 +2,15 @@ class ItemsController < ApplicationController
 
 
   def new
+    @list= List.find(params[:list_id])
     @item = Item.new
   end
 
   def create
-    @item = Item.create(item_params)
+    @list= List.find(params[:list_id])
+    @item = @list.items.create(item_params)
+    p @item.errors.full_messages
+    redirect_to list_path(@list)
   end
 
   def destroy
@@ -22,7 +26,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:product, :quantity, :list_id)
+    params.require(:item).permit(:product, :quantity)
   end
 
 end

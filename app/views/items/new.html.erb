@@ -1,0 +1,10 @@
+<div class="panel panel-default">
+  <h1 class="panel-heading">Add Item</h1>
+  <div class="panel-body">
+    <%= form_for [@list, @item] do |f| %>
+    Product: <%= f.text_field :product %>
+    Quantity: <%= f.number_field :quantity %>
+    <%= f.submit %>
+  </div>
+  <% end %>
+</div>

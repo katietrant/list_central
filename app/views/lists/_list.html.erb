@@ -1,4 +1,4 @@
 <li id="<%=list.id%>">
     <%= link_to list.name, list_path(list), class: 'list_title' %> <br />
-    <%= link_to "Delete #{list.name} List", list_path(list), method: 'delete', remote: true %>
-  </li>
+    <em><small><%= link_to "Delete", list_path(list), method: 'delete', remote: true %></small></em>
+  </li><br />

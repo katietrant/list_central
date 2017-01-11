@@ -8,10 +8,29 @@ class ItemsController < ApplicationController
 
   def create
     @list= List.find(params[:list_id])
-    @item = @list.items.create(item_params)
-    p @item.errors.full_messages
+    @item = @list.items.new(item_params)
+    if @item.save
+      redirect_to list_path(@list)
+    else
+      flash[:danger] = "Item did not save"
+      redirect_to list_path(@list)
+    end
+  end
+
+  def edit
+    @list = List.find(params[:list_id])
+    @item = Item.find_by(id: params[:id])
+  end
+
+  def update
+    @list = List.find(params[:list_id])
+    @item = Item.find_by(id: params[:id])
+    @item.update(item_params)
+
     redirect_to list_path(@list)
   end
+
+
 
   def destroy
     @item = Item.find(params[:id])

@@ -9,12 +9,10 @@ class ListsController < ApplicationController
 
   def create
     @user = current_user
-    @list = List.new(name: params[:list][:name], user_id:current_user.id)
+    @list = List.new(list_params.merge(user_id: @user.id))
     if @list.save
-      flash.notice = "#{@list.name} has been created"
       redirect_to user_path(@user)
     else
-      flash.notice = "Your list was not saved"
       redirect_to new_list_path
     end
   end
@@ -22,10 +20,18 @@ class ListsController < ApplicationController
   def show
     @list = List.find(params[:id])
     @items = @list.items
-    p "*" * 100
-    p @item = Item.new(:list => @list)
+    @item = Item.new(:list => @list)
+  end
 
-    # @fucktoy = @list.items.new
+  def edit
+    @list = List.find_by(id: params[:id])
+  end
+
+  def update
+    @list = List.find_by(id: params[:id])
+    @list.update(list_params)
+
+    redirect_to list_path(@list)
   end
 
   def destroy

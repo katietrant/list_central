@@ -1,6 +1,6 @@
 <li id="<%= item.id %>">
  <%=item.product%> |
- <%=item.quantity%> | 
- <%= link_to "Edit", edit_list_item_path(item.list.id, item) %> ||
+ <%=item.quantity%> |
+ <%= link_to "Edit", edit_list_item_path(item.list.id, item),{ :class=>"edit-item-link" }  %> ||
  <%= link_to "Purchased", list_item_path(item.list.id, item), :method => 'delete', remote: true %>
 </li>

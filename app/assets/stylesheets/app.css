@@ -1,3 +1,7 @@
 .new-item-form {
   display: none;
 }
+
+.edit-item-form {
+  display: none;
+}

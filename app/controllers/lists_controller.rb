@@ -11,10 +11,8 @@ class ListsController < ApplicationController
     @user = current_user
     @list = List.new(list_params.merge(user_id: @user.id))
     if @list.save
-      flash.notice = "#{@list.name} has been created"
       redirect_to user_path(@user)
     else
-      flash.notice = "Your list was not saved"
       redirect_to new_list_path
     end
   end

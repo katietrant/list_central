@@ -17,7 +17,6 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @lists = List.where(user_id: current_user.id)
-    p @lists
   end
 
   private

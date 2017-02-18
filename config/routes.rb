@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show]
   resources :records
-  resources :lists do
+  resources :lists, except: :index do
     resources :items
   end
 

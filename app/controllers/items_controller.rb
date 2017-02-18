@@ -30,8 +30,6 @@ class ItemsController < ApplicationController
     redirect_to list_path(@list)
   end
 
-
-
   def destroy
     @item = Item.find(params[:id])
     @item.destroy

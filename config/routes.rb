@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root to: 'sessions#new'
 
-  resources :users, only: [:new, :create, :show] do
-    resources :records, except: [:new, :show, :edit]
-  end
+  resources :users, only: [:new, :create, :show]
+  resources :records, except: [:new, :show, :edit]
+
   resources :lists, except: [:index] do
     resources :items, except: [:index, :show]
   end

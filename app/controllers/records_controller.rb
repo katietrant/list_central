@@ -4,8 +4,7 @@ class RecordsController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @record = Record.new(record_params.merge(user_id: @user.id))
+    @record = Record.new(record_params)
     if @record.save
       render json: @record
     else

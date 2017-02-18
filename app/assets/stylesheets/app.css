@@ -5,3 +5,8 @@
 .edit-item-form {
   display: none;
 }
+
+ul
+{
+list-style-type: none;
+}

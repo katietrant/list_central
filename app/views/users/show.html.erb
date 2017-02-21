@@ -1,9 +1,17 @@
-<% if current_user %>
-  <center><h1> Here are all your lists <h2>
-    <ul>
-      <%= render @lists %>
-    </ul>
-    <%= link_to "Create a New List", new_list_path, class: 'new_list' %></center>
-<% else %>
-  <%= link_to "Please Log in", login_path %>
-  <% end %>
+<center>
+  <% if current_user %>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <div class="panel-body">
+        <h1><%= "-#{current_user.username}'s List Central-" %><h1>
+        </div>
+      </div>
+    </div>
+        <ul>
+          <%= render @lists %>
+        </ul>
+        </center>
+        <em><h4><%= link_to "Create a New List", new_list_path, class: 'new_list' %></h4></em>
+    <% else %>
+        <%= link_to "Please Log in", login_path %>
+    <% end %>

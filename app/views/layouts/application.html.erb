@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Expenses</title>
+    <title>List Central</title>
     <%= csrf_meta_tags %>
-    <link href= "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/sandstone/bootstrap.min.css">
+    <!-- <link href= "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/sandstone/bootstrap.min.css"> -->
     <%= stylesheet_link_tag 'app', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -11,13 +11,13 @@
 
   <body>
     <% if current_user %>
-      <%= "Logged in as #{current_user.username}"%>
-      <%= link_to "logout", logout_path %>
+      <%= "Logged in as #{current_user.username}"%><br />
+      <%= link_to "Logout", logout_path %>
     <% else %>
-      <%= link_to "Log in", login_path %>
+      <%= link_to "Login", login_path %> ||
       <%= link_to "Sign Up", new_user_path %>
     <% end %>
-  </header>
+    <br /><strong><%= flash.notice %></strong>
     <%= yield %>
   </body>
 </html>

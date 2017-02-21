@@ -1,4 +1,4 @@
   <li id="<%=list.id%>">
-    <%= link_to list.name, list_path(list), class: 'list_title' %> <br />
+    <h2><%= link_to list.name, list_path(list), class: 'list_title' %> <br /></h2>
     <em><small><%= link_to "Delete", list_path(list), method: 'delete', remote: true, data: {confirm: "Really truly delete?"} %></small></em>
   </li><br />

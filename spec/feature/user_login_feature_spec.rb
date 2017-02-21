@@ -13,7 +13,7 @@ feature "user login" do
     fill_in 'email', with: 'user@user.com'
     fill_in 'password', with: 'password'
     click_button 'Login'
-    expect(page).to have_content "Here are all your lists"
+    expect(page).to have_content "List Central"
   end
 
   scenario "user sees error when logging in with incorrect password" do

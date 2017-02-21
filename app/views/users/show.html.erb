@@ -10,8 +10,8 @@
         <ul>
           <%= render @lists %>
         </ul>
-        <em><h3><%= link_to "Create a New List", new_list_path, class: 'new_list' %></h3></em>
+        </center>
+        <em><h4><%= link_to "Create a New List", new_list_path, class: 'new_list' %></h4></em>
     <% else %>
         <%= link_to "Please Log in", login_path %>
     <% end %>
-</center>
